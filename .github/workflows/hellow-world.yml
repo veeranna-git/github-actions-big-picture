@@ -1,0 +1,21 @@
+name: Hello World Workflow
+
+# Trigger the workflow on push events to the main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  say-hello:
+    name: Say Hello
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Print Hello World
+      - name: Print Hello World message
+        run: echo "Hello, World! This is my first GitHub Actions workflow!"
